@@ -5,11 +5,12 @@ namespace ExcelToolsGlobalNamingArea
     public class ExcelToolsVM
     {
         #region Properties
+        public string SheetNm { get; set; }
         public string SheetNo1 { get; set; }
         public string SheetNo2 { get; set; }
         public int No1 { get; private set; }
         public int No2 { get; private set; }
-        public int MaxLoopCnt { get; private set; }
+        public int MaxLoopCnt { get; set; }
         #endregion
 
         #region Required Items Validation
@@ -72,7 +73,7 @@ namespace ExcelToolsGlobalNamingArea
         private bool IsMaxLoopCntEnough()
         {
             this.MaxLoopCnt = this.No2 - this.No1;
-            return (this.MaxLoopCnt < 2);
+            return (this.MaxLoopCnt > 1);
         }
         #endregion
     }

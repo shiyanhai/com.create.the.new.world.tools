@@ -65,7 +65,10 @@ namespace ExcelToolsGlobalNamingArea
                 return;
             }
 
-            new ExcelCreation(vm);
+            // TODO add Excel interop
+            return;
+
+            //new ExcelCreation(vm);
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
