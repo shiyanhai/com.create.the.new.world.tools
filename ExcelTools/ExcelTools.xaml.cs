@@ -1,17 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+﻿using System.Windows;
 
 namespace ExcelToolsGlobalNamingArea
 {
@@ -20,19 +7,70 @@ namespace ExcelToolsGlobalNamingArea
     /// </summary>
     public partial class ExcelTools : Window
     {
+        private ExcelToolsVM vm = new ExcelToolsVM();
+
         public ExcelTools()
         {
             InitializeComponent();
+            this.DataContext = vm;
+        }
+
+        private void Window_Loaded(object sender, RoutedEventArgs e)
+        {
+            this.txtSheetNm.Focus();
         }
 
         private void BtnBookCreation_Click(object sender, RoutedEventArgs e)
         {
+            // Required Items Validation
+            if (!this.vm.NotNullValidation())
+            {
+                MessageBox.Show("Input less than numeric 100 characters, please."
+                    , "Warning"
+                    , MessageBoxButton.OK
+                    , MessageBoxImage.Warning);
+                this.txtSheetNo1.Focus();
+                return;
+            }
 
+            // Single Item Validation
+            if (!this.vm.SingleValidation())
+            {
+                MessageBox.Show("Input less than numeric 100 characters, please."
+                    , "Warning"
+                    , MessageBoxButton.OK
+                    , MessageBoxImage.Warning);
+                this.txtSheetNo1.Focus();
+                return;
+            }
+
+            // Multi Items Validation
+            if (!this.vm.MultiValidation())
+            {
+                MessageBox.Show("The left value should input less than right value, please."
+                    , "Warning"
+                    , MessageBoxButton.OK
+                    , MessageBoxImage.Warning);
+                this.txtSheetNo1.Focus();
+                return;
+            }
+
+            if (!this.vm.IsEnoughSheets())
+            {
+                MessageBox.Show("Both left and right value should input more than 2, please."
+                    , "Warning"
+                    , MessageBoxButton.OK
+                    , MessageBoxImage.Warning);
+                this.txtSheetNo1.Focus();
+                return;
+            }
+
+            new ExcelCreation(vm);
         }
 
         private void BtnClose_Click(object sender, RoutedEventArgs e)
         {
-
+            this.Close();
         }
     }
 }

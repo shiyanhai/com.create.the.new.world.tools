@@ -63,6 +63,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="ExcelCreation.cs" />
     <Compile Include="ExcelTools.xaml.cs">
       <DependentUpon>ExcelTools.xaml</DependentUpon>
       <SubType>Code</SubType>
