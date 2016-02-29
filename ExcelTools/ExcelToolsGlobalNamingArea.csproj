@@ -7,7 +7,7 @@
     <ProjectGuid>{D04C9B7D-6F7C-4249-B5CE-A64298DA515A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExcelTools</RootNamespace>
+    <RootNamespace>ExcelToolsGlobalNamingArea</RootNamespace>
     <AssemblyName>ExcelTools</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -55,7 +55,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="MainWindow.xaml">
+    <Page Include="ExcelTools.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -63,8 +63,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
+    <Compile Include="ExcelTools.xaml.cs">
+      <DependentUpon>ExcelTools.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
