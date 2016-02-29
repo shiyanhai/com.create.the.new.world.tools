@@ -13,14 +13,14 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace ExcelTools
+namespace ExcelToolsGlobalNamingArea
 {
     /// <summary>
-    /// MainWindow.xaml の相互作用ロジック
+    /// ExcelTools.xaml Main Logic
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class ExcelTools : Window
     {
-        public MainWindow()
+        public ExcelTools()
         {
             InitializeComponent();
         }
