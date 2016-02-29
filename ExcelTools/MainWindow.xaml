@@ -118,6 +118,46 @@
         </Grid>
 
         <!--  Block2  -->
-        <Grid Grid.Row="1" />
+        <Grid Grid.Row="1">
+            <StackPanel HorizontalAlignment="Right" Orientation="Horizontal">
+                <Button Name="BtnBookCreation"
+                        Width="100"
+                        Margin="10,0,0,0"
+                        Click="BtnBookCreation_Click">
+                    <Button.Style>
+                        <Style TargetType="Button">
+                            <Style.Triggers>
+                                <Trigger Property="Border.IsMouseOver" Value="True">
+                                    <Setter Property="ToolTip" Value="Create the Excel book." />
+                                </Trigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Button.Style>
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="LightBlue" CornerRadius="10">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="Decide" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+                <Button Name="BtnClose"
+                        Width="80"
+                        Margin="10,0,0,0"
+                        Click="BtnClose_Click">
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="LightGray" CornerRadius="10">
+                                <TextBlock HorizontalAlignment="Center"
+                                           VerticalAlignment="Center"
+                                           Text="Close" />
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+                </Button>
+            </StackPanel>
+        </Grid>
     </Grid>
 </Window>

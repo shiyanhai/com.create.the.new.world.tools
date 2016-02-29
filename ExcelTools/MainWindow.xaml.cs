@@ -24,5 +24,15 @@ namespace ExcelTools
         {
             InitializeComponent();
         }
+
+        private void BtnBookCreation_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void BtnClose_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
